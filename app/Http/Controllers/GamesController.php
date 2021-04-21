@@ -68,13 +68,29 @@ class GamesController extends BaseController
      }
 
      public function reset(Request $request) {
-        Redis::hset('top_score',$request->name,$request->point);
+        // Redis::hset('top_score',$request->name,$request->point);
+
+        $insertItems = [
+            'name' => $request->name,
+            'score' => $request->point
+        ];
+        \DB::table('high_score')->insert($insertItems);
+
+        return true;
      }
 
      public function topscore() {
-        $redisItems = Redis::hgetall('top_score');
-        arsort($redisItems);
+        $items = \DB::table('high_score')
+                ->get();
+        
+        $redisItems = [];
+        foreach($items as $item) {
+            $redisItems[$item->name] = $item->score;
+        }
 
+        // $redisItems = Redis::hgetall('top_score');
+        arsort($redisItems);
+        
         return view('dashboard')
             ->with('data',$redisItems);
      }

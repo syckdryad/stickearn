@@ -1,6 +1,6 @@
 <html lang="en" dir="ltr">
 <body>
-    <div class="sidenav">
+    <div class="sidenav" class="sidebar">
         <a href="{{ url('topscore') }}">Top Score</a>
         <a href="{{ url('games') }}">Play</a>
     </div>
