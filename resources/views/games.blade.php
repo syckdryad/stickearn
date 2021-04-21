@@ -293,13 +293,17 @@ body {
                         )
 
                         var lastPoint = parseInt(point) + 10;
-                        if(lastPoint <= 100) {
+                        if(lastPoint < 100) {
                             document.getElementById("point").value = parseInt(point) + 10;
                             generateScrambler(idx);
                         }
                         else {
+                            if(lastPoint == 100) {
+                                document.getElementById("point").value = parseInt(point) + 10;
+                            }
+
                             Swal.fire(
-                                'Info',
+                                'Congratulations!',
                                 'You already reach the maximum score, Click Quit to quit the game!',
                                 'warning'
                             );

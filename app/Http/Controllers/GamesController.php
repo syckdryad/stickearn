@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Redis;
 class GamesController extends BaseController
 {
     private static $words = [
-        'games',
+        'coffee',
         'car',
         'watch',
         'pencil',
@@ -19,7 +19,7 @@ class GamesController extends BaseController
         'office',
         'notebook',
         'handphone',
-        'motorcycle'
+        'chair'
     ];
 
     public function index() {
@@ -38,7 +38,15 @@ class GamesController extends BaseController
     public function shuffleWord($word) {
         $wordArray = str_split($word);
         shuffle($wordArray);
-        return strtoupper(implode(' ',$wordArray));
+
+        $result = strtoupper(implode(' ',$wordArray));
+
+        if($result !== $word) {
+            return $result;
+        }
+        else {
+            $this->shuffleWord($word);
+        }
     }
 
     public function submit(Request $request) {
