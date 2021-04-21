@@ -1,14 +1,9 @@
   <nav>
     <h1>Scrambled Words</h1>
-    <div id="contact">
-      <a target="_blank" href="https://github.com/IAmAlexJohnson"><i class="fab fa-github"></i></a>
-      <a target="_blank" href="https://codepen.io/IAmAlexJohnson/"><i class="fab fa-codepen"></i></a>
-      <a target="_blank" href="https://twitter.com/IAmAlexJohnson"><i class="fab fa-twitter"></i></a>
-    </div>
     <div id="rules">
       <p class="lead">Unscamble the words.</p>
-      <p>Type in your guess <small>(Enter works)</small>.</p>
       <p>Test your skills, get the biggest point</p>
+      <p>Click Submit to submit your answer</p>
       <p>Click Quit to quit the game</p>
       <p>Good luck!</p>
       <button id="play-btn" onClick="play()">Let's Play</button>
@@ -156,7 +151,7 @@ body {
 }
 
 nav {
-  border-bottom: #e18a07 2px solid;
+  border-bottom: #303f9f 2px solid;
   width: 100%;
   padding: 0.625em;
   display: block;
@@ -168,22 +163,6 @@ h1 {
   display: inline-block;
   float: left;
   padding-left: 1em;
-}
-
-#contact {
-  font-size: 2em;
-  display: inline-block;
-  float: right;
-  padding-right: 1em;
-}
-
-#contact a {
-  color: #000;
-}
-
-#contact i:hover {
-  color: #e18a07;
-  cursor: pointer;
 }
 
 #rules {
@@ -250,7 +229,7 @@ h1 {
   padding-left: 1em;
   margin: 0 auto 1.25em;
   border: 1px solid #000;
-  outline-color: #e18a07;
+  outline-color: #303f9f;
   font-size: 1.1em;
 }
 
@@ -296,12 +275,12 @@ button {
 #submit,
 #play-btn {
   background: #fff;
-  border: 2px solid #e18a07;
+  border: 2px solid #303f9f;
 }
 
 #submit:hover,
 #play-btn:hover {
-  background: #e18a07;
+  background: #303f9f;
   color: #fff;
   transition: 0.2s background;
 }
